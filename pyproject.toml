@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-getpaid-paynow"
-version = "0.1.0"
+version = "0.1.1"
 description = "Django-GetPaid plugin for mBank payNow service."
 authors = ["Dominik Kozaczko <dominik@kozaczko.info>"]
 license = "MIT"
@@ -13,7 +13,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
-django-getpaid = "^2.0.0-rc.3"
+django-getpaid = "^2.0.0-rc.4"
 requests = "^2.23.0"
 swapper = "^1.1.2"
 

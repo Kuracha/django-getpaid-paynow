@@ -155,17 +155,17 @@ bcrypt = ["bcrypt"]
 
 [[package]]
 category = "main"
-description = "Multi-broker payment processor for Django"
+description = "Multi-broker payment processor for Django."
 name = "django-getpaid"
 optional = false
-python-versions = "*"
-version = "2.0.0rc3"
+python-versions = ">=3.6,<4.0"
+version = "2.0.0rc4"
 
 [package.dependencies]
-django-model-utils = ">=2.0"
-pendulum = "*"
-requests = "*"
-swapper = "*"
+django-model-utils = ">=4.0.0,<5.0.0"
+pendulum = ">=2.0.5,<3.0.0"
+requests = ">=2.23.0,<3.0.0"
+swapper = ">=1.1.2,<2.0.0"
 
 [[package]]
 category = "main"
@@ -228,7 +228,7 @@ marker = "python_version < \"3.7\""
 name = "importlib-resources"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
-version = "1.3.0"
+version = "1.3.1"
 
 [package.dependencies]
 [package.dependencies.importlib-metadata]
@@ -713,7 +713,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "6f90346c8c0347880abacf3448837e33bd8498901abf8d1beb7a98c8c529278b"
+content-hash = "26cea326f26def5dcdf74f645e97978644289a97ddaa1ee2dd687efb19cdd586"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -777,8 +777,8 @@ django = [
     {file = "Django-3.0.4.tar.gz", hash = "sha256:50b781f6cbeb98f673aa76ed8e572a019a45e52bdd4ad09001072dfd91ab07c8"},
 ]
 django-getpaid = [
-    {file = "django-getpaid-2.0.0rc3.tar.gz", hash = "sha256:291f0c9de4206e1668e8ae629169add8be42ead25c68c92703872eb0434cefb8"},
-    {file = "django_getpaid-2.0.0rc3-py2.py3-none-any.whl", hash = "sha256:d30493b6d7826225567402109b558031bbf204b3b77fcee0f3a1cde3968becf4"},
+    {file = "django-getpaid-2.0.0rc4.tar.gz", hash = "sha256:1bcb8de7aca1a9d41c5d19341c1f5a208a4b8a9c23df299199c3794c7c6d3522"},
+    {file = "django_getpaid-2.0.0rc4-py3-none-any.whl", hash = "sha256:ebc4ae3d7e75946ec74e493de52952766b70218674f59b589d07325218513de6"},
 ]
 django-model-utils = [
     {file = "django-model-utils-4.0.0.tar.gz", hash = "sha256:adf09e5be15122a7f4e372cb5a6dd512bbf8d78a23a90770ad0983ee9d909061"},
@@ -801,8 +801,8 @@ importlib-metadata = [
     {file = "importlib_metadata-1.5.0.tar.gz", hash = "sha256:06f5b3a99029c7134207dd882428a66992a9de2bef7c2b699b5641f9886c3302"},
 ]
 importlib-resources = [
-    {file = "importlib_resources-1.3.0-py2.py3-none-any.whl", hash = "sha256:53a3c28bf4d71e7bc685d8e5310acb09c8efeccb76812ff1818f7a9bf535cdf9"},
-    {file = "importlib_resources-1.3.0.tar.gz", hash = "sha256:4ac5df83a9e7648d7df13cde41bc0ec26090ce6fcb182c8ed7315ad4a45f82ae"},
+    {file = "importlib_resources-1.3.1-py2.py3-none-any.whl", hash = "sha256:1dff36d42d94bd523eeb847c25c7dd327cb56686d74a26dfcc8d67c504922d59"},
+    {file = "importlib_resources-1.3.1.tar.gz", hash = "sha256:7f0e1b2b5f3981e39c52da0f99b2955353c5a139c314994d1126c2551ace9bdf"},
 ]
 ipdb = [
     {file = "ipdb-0.13.2.tar.gz", hash = "sha256:77fb1c2a6fccdfee0136078c9ed6fe547ab00db00bebff181f1e8c9e13418d49"},
