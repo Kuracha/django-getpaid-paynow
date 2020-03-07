@@ -1,12 +1,9 @@
 from django.apps import AppConfig
-from django.conf import settings
-from django.core.exceptions import ImproperlyConfigured
 from django.utils.translation import ugettext_lazy as _
 
 
 class GetpaidPaynowAppConfig(AppConfig):
-    name = "getpaid.backends.paynow"
-    label = "getpaid_paynow"
+    name = "getpaid_paynow"
     verbose_name = _("mBank Paynow")
 
     def ready(self):

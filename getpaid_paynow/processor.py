@@ -58,7 +58,7 @@ class PaymentProcessor(BaseProcessor):
             status=data["status"],
         )
 
-    def get_redirect_params(self):
+    def get_redirect_params(self, request=None):
         data = self.payment.order.get_user_info()
         buyer = dict(
             email=data.get("email"),
@@ -67,15 +67,16 @@ class PaymentProcessor(BaseProcessor):
         )
         return json.dumps(
             dict(
-                amount=int(self.payment.amount * 10),
+                amount=int(self.payment.amount * 100),
                 currency=self.payment.currency,
                 externalId=self.payment.pk,
                 description=self.payment.description,
-                continueUrl=reverse(
-                    "getpaid:payment-success", kwargs=dict(pk=self.payment.pk)
+                continueUrl=request.build_absolute_uri(
+                    reverse("getpaid:payment-success", kwargs=dict(pk=self.payment.pk))
                 ),
                 buyer=dict([(k, v) for k, v in buyer.items() if v]),
-            )
+            ),
+            default=str,
         )
 
     def get_redirect_url(self, params=None):
@@ -100,3 +101,14 @@ class PaymentProcessor(BaseProcessor):
             elif status in ["REJECTED", "ERROR"]:
                 return {"status": PaymentStatus.FAILED}
             return {"status": PaymentStatus.IN_PROGRESS}
+
+    def prepare_headers(self, obj: str) -> dict:
+        api_key = self.get_setting("api_key")
+        signature_key = self.get_setting("signature_key")
+        signature = self.calc_signature(obj, signature_key)
+        return {
+            "Api-Key": api_key,
+            "Signature": signature,
+            "Idempotency-Key": str(self.payment.order.pk),
+            "Content-Type": "application/json",
+        }
